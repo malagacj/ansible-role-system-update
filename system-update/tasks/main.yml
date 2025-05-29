@@ -1,0 +1,12 @@
+---
+# tasks file for system-update
+- block:
+  - name: Update apt cache
+    ansible.builtin.apt:
+      update_cache: yes
+      cache_valid_time: "{{ system_update_apt_cache_valid_time }}"
+
+  - name: Upgrade all packages
+    ansible.builtin.apt:
+      upgrade: dist
+  when: ansible_os_family == "Debian"

@@ -1,0 +1,3 @@
+---
+# defaults file for system-update
+system_update_apt_cache_valid_time: 3600  # default 1 hour
